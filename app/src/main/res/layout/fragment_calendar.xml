@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.CalendarFragment">
+
+    <CalendarView
+        android:id="@+id/choose_date"
+        android:background="@drawable/calendar_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/add_new_sub"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Добавить новый предмет"
+        app:layout_constraintTop_toBottomOf="@id/choose_date"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_sub"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/line_view"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <ImageView
+        android:id="@+id/line_view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:scaleType="centerCrop"
+        android:background="#CFCFCF"
+        app:srcCompat="@android:drawable/bottom_bar"
+        app:layout_constraintTop_toBottomOf="@id/add_new_sub"
+        android:layout_marginTop="3dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
